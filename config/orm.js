@@ -1,22 +1,32 @@
-const { connect } = require("../config/connection.js");
 const connection = require("../config/connection.js");
 
 
 const orm = {
 
-    selectAll: function(tableInput, cb) {
-        const query = "SELECT * FROM" + tableInput + ";";
-        connect.query(query, function(err, result) {
-            if (err) {
-                throw err
-            }
-            cb(result)
-        })
-    },
+    // selectAll: function(cb) {
+    //     const query = SELECT * FROM burgers"
+    //     connect.query(query, function(err, data) {
+    //         if (err) {
+    //             throw err
+    //         }
+    //         cb(data)
+    //     })
+    // },
 
-    insertOne: function(table, cols, vals, cb) {
-        const query = "INSERT INTO" + table
-    },
+   
+        all: function(burgers, cb) {
+          var queryString = "SELECT * FROM " + burgers + ";";
+          connection.query(queryString, function(err, result) {
+            if (err) {
+              throw err;
+            }
+            cb(result);
+          });
+        }
+
+    // insertOne: function(table, cols, vals, cb) {
+    //     const query = "INSERT INTO" + table
+    // },
     
     
     
@@ -24,11 +34,11 @@ const orm = {
     
     
    
-    updateOne()
+//     updateOne()
     
     
     
     
-};
+ }
     
-module.exports = orm;
+module.exports = orm
