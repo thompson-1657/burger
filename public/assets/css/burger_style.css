@@ -1,0 +1,22 @@
+h1 {
+  text-align: center;
+}
+
+#burger-img {
+  display: block;
+  height: 150px;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+textarea,
+#newBurgerButton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
