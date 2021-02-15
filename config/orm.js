@@ -2,31 +2,34 @@ const connection = require("../config/connection.js");
 
 
 const orm = {
-
-    // selectAll: function(cb) {
-    //     const query = SELECT * FROM burgers"
-    //     connect.query(query, function(err, data) {
-    //         if (err) {
-    //             throw err
-    //         }
-    //         cb(data)
-    //     })
-    // },
-
    
         all: function(burgers, cb) {
-          var queryString = "SELECT * FROM " + burgers + ";";
+          const queryString = "SELECT * FROM " + burgers + ";";
           connection.query(queryString, function(err, result) {
             if (err) {
               throw err;
             }
             cb(result);
           });
-        }
+        },
 
-    // insertOne: function(table, cols, vals, cb) {
-    //     const query = "INSERT INTO" + table
-    // },
+      //  create:    
+      create: function (burger_name) {
+        connection.query(`INSERT INTO burgers (burger_name, devoured) VALUES (?, false);`, [burger_name], (err, data) => {
+          if (err) throw err
+      })
+  },
+
+
+
+  delete: function (id) {
+    const queryString = "DELETE FROM burgers WHERE id = ?";
+    connection.query(queryString, [id], function (err, data) {
+        if (err) {
+            throw err;
+        }
+    });
+}
     
     
     
@@ -34,7 +37,7 @@ const orm = {
     
     
    
-//     updateOne()
+//     update:
     
     
     

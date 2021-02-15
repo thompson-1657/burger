@@ -12,4 +12,42 @@
     {{{ body }}}
 </body>
 
+
+<script>
+
+    $("#newBurgerButton").click(function (event) {
+        event.preventDefault();
+        const newBurger = {
+            burger_name: $("#burgerText").val().trim()
+        }
+        console.log(newBurger)
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurger
+        }).then(
+            function () {
+                console.log("created new burger");
+            }
+        );
+        location.reload();
+    });
+
+    $(".delete").click(function (event) {
+        const id = $(this).attr("data-id");
+        $.ajax(`/api/burgers/${id}`, {
+            type: "DELETE",
+            data: { id }
+        }).then(function () {
+            console.log("Deleted, " + id);
+        });
+        location.reload();
+    })
+
+
+
+
+
+
+</script>
+
 </html>

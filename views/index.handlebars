@@ -13,6 +13,7 @@
                         {{this.burger_name}}
                     </span>
                     <button class="devour" data-id="{{id}}">Devour it!</button>
+                    <button class="delete" data-id="{{id}}">&times</button>
                 </li>
                 {{/unless}}
                 {{/each}}
@@ -32,6 +33,7 @@
                         {{this.burger_name}}
                     </span>
                     <button class="devour" data-id="{{id}}">Devour it!</button>
+                    <button class="delete" data-id="{{id}}">&times</button>
                 </li>
                 {{/if}}
                 {{/each}}
@@ -43,7 +45,9 @@
 <div class="row">
     <div col-md-12>
         <form id="postBurgerForm">
-            <textarea name="addBurgerText" id="" cols="30" rows="10"></textarea>
+            <textarea name="addBurgerText" id="burgerText" cols="30" rows="10"></textarea>
             <button type=submit id="newBurgerButton">Add Burger</button>
+        </form>
     </div>
+
 </div>
