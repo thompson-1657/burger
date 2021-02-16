@@ -23,11 +23,7 @@ const burger = {
     orm.delete(cb, function (res) {
         cb(res)
     })
-}
-
-  
-
+  }
 };
-
 
 module.exports = burger;
