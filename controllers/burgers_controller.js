@@ -22,6 +22,13 @@ const burger_name = req.body.burger_name
 })
 
 
+router.put("/api/burgers/:id", function (req, res) {
+  const id = req.params.id
+    console.log(req.params.id)
+    burger.update(id), function (data) {
+        console.log(data)
+    }
+  })
 
   router.delete("/api/burgers/:id", function (req, res) {
   const id = req.params.id

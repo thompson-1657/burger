@@ -13,7 +13,11 @@ const burger = {
     });
   },
 
-  //update
+  update: function(cb) {
+    orm.update(cb, function(res) {
+      cb(res);
+    });
+  },
 
   delete: function(cb) {
     orm.delete(cb, function (res) {

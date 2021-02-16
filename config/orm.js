@@ -21,6 +21,15 @@ const orm = {
   },
 
 
+  update: function(id) {
+    const queryString = "UPDATE burgers SET devoured = 1 WHERE id = ?";
+    connection.query(queryString, [id], function (err, data) {
+      if (err) {
+          throw err;
+      }
+  });
+  },
+
 
   delete: function (id) {
     const queryString = "DELETE FROM burgers WHERE id = ?";
@@ -37,7 +46,6 @@ const orm = {
     
     
    
-//     update:
     
     
     

@@ -15,6 +15,7 @@
 
 <script>
 
+
     $("#newBurgerButton").click(function (event) {
         event.preventDefault();
         const newBurger = {
@@ -42,6 +43,29 @@
         });
         location.reload();
     })
+
+    $(".devour").click(function (event) {
+        event.preventDefault();
+        const id = $(this).data("id");
+        const newDevoured = 1
+
+
+        const newDevourState = {
+            devoured: newDevoured
+        }
+        $.ajax(`/api/burgers/${id}`, {
+            type: "PUT",
+            data: newDevourState
+        }).then(function () {
+
+        });
+        location.reload();
+    })
+
+
+
+
+
 
 
 
