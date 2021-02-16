@@ -1,11 +1,18 @@
+html,
+body {
+  height: 100%;
+  background-color: #f7dc6f;
+}
+
 h1 {
   text-align: center;
+  color: #c0392b;
 }
 
 #burger-img {
   display: block;
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -19,4 +26,29 @@ textarea,
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10px;
+  box-shadow: -5px 10px 10px grey;
+}
+
+li {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+#devouredBurgers {
+  opacity: 0.4;
+}
+
+.delete {
+  background-color: #f7dc6f;
+}
+
+.devour {
+  background-color: #c0392b;
+}
+
+span {
+  font-size: 24px;
+  color: #6e2c00;
+  font-weight: bold;
 }
